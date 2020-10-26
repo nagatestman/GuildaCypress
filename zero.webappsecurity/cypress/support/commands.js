@@ -32,4 +32,5 @@ Cypress.Commands.add('login', (login,password) => {
     cy.get('#signin_button').click()
     cy.get('#user_login').type(login)
     cy.get('#user_password').type(password)
+    cy.get('.btn').click()
   })
