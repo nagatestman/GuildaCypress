@@ -1,4 +1,4 @@
-
+/// <reference types="Cypress" />
 
 describe('Actions', () => {
     beforeEach(() => {
@@ -37,7 +37,7 @@ describe('Actions', () => {
         cy.get('.alert-error').contains('Login and/or password are wrong.').should('be.visible') //or
     })
 
-    //TESTE 4
+    //TESTE 5
     //Ser ve para encapsular bloco de testes
     //Command nao precisa importar, já é automatico
     //Serve para reduzir complexidade, facilitar a manutenção, reuso bloco de codigo
@@ -58,13 +58,14 @@ describe('Actions', () => {
 
     //TESTE 6
     //Validar o funcionamento do Carrocel
-    it.only('.carrocel - change carrocel', () => {
+    it('.carrocel - change carrocel', () => {
         cy.get('.carousel-control').eq(1).click({force: true})
         cy.wait(1000)
         cy.get('.carousel-control').eq(1).click({force: true})
     })
 
-
+    //TESTE 7
+    //Validar o funcionamento do metodo clear
     it('.clear() - clears an input or textarea element', () => {
         cy.get('#searchTerm').type('Clear this text')
           .should('have.value', 'Clear this text')
@@ -72,8 +73,10 @@ describe('Actions', () => {
           .should('have.value', '')
     })
 
+
     it.only('.scrollIntoView() - scroll an element into view', () => {
         cy.get('#download_webinspect_link').scrollIntoView()
         .should('be.visible')
+        cy.wait
     })
 })

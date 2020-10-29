@@ -11,9 +11,4 @@ describe('API Test with Cypress', () => {
             expect(response.body.data).to.have.length(24)
         })
     })
-
-    it('.post - create', () => {
-        const item = {"name":"test", "salary":"123", "age":"23"}
-        cy.request({method: 'POST', url: '/create'}, item)
-    })
 })
